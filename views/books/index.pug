@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h1= title
+  p
+    a.button(href='books/new') Create New Book
+
+  table(style='width:100 %', align = 'center' border='1')
+    tr
+      th Title 
+      th Author
+      th Genre
+      th Year
+    each book in books
+      book 
+        tr
+          td 
+           a(href= `books/${book.id}` )= book.title
+          td= book.author
+          td= book.genre
+          td= book.year 
+  
+    
+    
+
